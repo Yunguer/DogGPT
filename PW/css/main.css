@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Open Sans";
+  color: #353740;
+}
+
+h2 {
+  font-weight: 300;
+}
+
+.page-wrapper {
+  width: 100%;
+  height: 100vh;
+  display: table;
+}
+
+.full-height {
+  height: auto;
+  position: relative;
+}
+
+.nav-bar {
+  height: 100vh;
+  background-color: #202123;
+}
+
+.main-title {
+  font-family: "Open Sans";
+  text-align: center;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 700;
+  margin-top: 10%;
+}
+
+.main-examples {
+  text-align: center;
+}
+
+.margin-top-15 {
+  margin-top: 15px;
+}
+
+.margin-top-30 {
+  margin-top: 30px;
+}
+
+.margin-bottom-15 {
+  margin-bottom: 15px;
+}
+
+.example-button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.main-li {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: #f0f0f0;
+  font-size: 13px;
+}
+
+.example-button:hover {
+  background-color: #d9d9e3;
+}
+
+.main-input {
+  width: 50%;
+  position: fixed;
+  bottom: 50px;
+}
+
+.text-area {
+  resize: none;
+  width: 100%;
+  height: 44px;
+  padding-left: 10px;
+  padding-top: 12px;
+  border: 1px 1px;
+  border-color: rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  outline: none;
+  box-shadow: 0.5px 0.5px rgba(0, 0, 0, 0.2);
+}
+
+.main-wrapper {
+  display: block;
+  width: 100%;
+  margin: 0;
+}
