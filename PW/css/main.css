@@ -32,6 +32,76 @@ h2 {
     background-color: #202123;
   }
   
+  .nav-list {
+    margin-top: 20px;
+    height: 100%;
+  }
+  
+  .nav-list-new-button {
+    position: absolute;
+    width: 90%;
+    text-decoration: none;
+    color: white;
+    padding-bottom: 0.75rem;
+    padding-top: 0.75rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    margin-bottom: 0.25rem;
+    border-width: 1px; 
+    border-style: solid; 
+    border-color:  rgb(255,255,255,.2);
+    border-radius: 5px;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .nav-list-new-button:hover {
+    background-color: #353740;
+  }
+
+  .nav-list-account {
+    position: absolute;
+    width: 90%;
+    border-style: solid;
+    border-width: 1px 0px 0px 0px;
+    border-color: hsla(0,0%,100%,.2);
+    padding-top: .5rem;
+    bottom: 10px;
+    padding-bottom: 0.75rem;
+    padding-top: 0.75rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    margin-bottom: 0.25rem;
+    color: white;
+  }
+
+  .nav-list-account-button {
+    border:none;
+    padding-top: .5rem;
+    bottom: 10px;
+    padding-bottom: 0.75rem;
+    padding-top: 0.75rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    margin-bottom: 0.25rem;
+    background-color: #202123;
+    cursor: pointer;
+
+    width: 100%;
+    align-items: center;
+  }
+
+  .nav-list-account-button:hover {
+    background-color: #353740;
+    border-radius: 10px;
+  }
+
+  .nav-list-account-username {
+    flex-grow: 1;
+    font-size: 0.9rem;
+    color: white;
+  }
+
   .main-title {
     font-family: "Open Sans";
     text-align: center;
