@@ -19,24 +19,24 @@ h2 {
     height: 100vh;
     display: table;
   }
-  
+
   .full-height {
     height: auto;
     position: relative;
   }
-  
+
   .nav-bar {
     display: block;
     position: fixed;
     height: 100vh;
     background-color: #202123;
   }
-  
+
   .nav-list {
     margin-top: 20px;
     height: 100%;
   }
-  
+
   .nav-list-new-button {
     position: absolute;
     width: 90%;
@@ -47,14 +47,14 @@ h2 {
     padding-left: 0.75rem;
     padding-right: 0.75rem;
     margin-bottom: 0.25rem;
-    border-width: 1px; 
-    border-style: solid; 
-    border-color:  rgb(255,255,255,.2);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(255, 255, 255, .2);
     border-radius: 5px;
     align-items: center;
     cursor: pointer;
   }
-  
+
   .nav-list-new-button:hover {
     background-color: #353740;
   }
@@ -64,7 +64,7 @@ h2 {
     width: 90%;
     border-style: solid;
     border-width: 1px 0px 0px 0px;
-    border-color: hsla(0,0%,100%,.2);
+    border-color: hsla(0, 0%, 100%, .2);
     padding-top: .5rem;
     bottom: 10px;
     padding-bottom: 0.75rem;
@@ -76,7 +76,7 @@ h2 {
   }
 
   .nav-list-account-button {
-    border:none;
+    border: none;
     padding-top: .5rem;
     bottom: 10px;
     padding-bottom: 0.75rem;
@@ -108,13 +108,13 @@ h2 {
     font-size: 2.25rem;
     line-height: 2.5rem;
     font-weight: 700;
-    margin-top: 10%;
+    margin-top: 5%;
   }
-  
+
   .main-examples {
     text-align: center;
   }
-  
+
   .example-button {
     width: 100%;
     padding: 10px;
@@ -122,7 +122,7 @@ h2 {
     border-radius: 6px;
     cursor: pointer;
   }
-  
+
   .main-li {
     padding: 10px;
     border: none;
@@ -130,17 +130,11 @@ h2 {
     background-color: #f0f0f0;
     font-size: 13px;
   }
-  
+
   .example-button:hover {
     background-color: #d9d9e3;
   }
-  
-  .main-input {
-    width: 100%;
-    position: fixed;
-    bottom: 60px;
-  }
-  
+
   .text-area {
     resize: none;
     width: 65%;
@@ -153,19 +147,19 @@ h2 {
     outline: none;
     box-shadow: 0.5px 0.5px rgba(0, 0, 0, 0.2);
   }
-  
+
   .main-wrapper {
     display: block;
     position: relative;
     width: 100%;
     margin: 0;
   }
-  
+
   .main-content {
     margin-left: auto;
     margin-bottom: 30%;
   }
-  
+
 }
 
 @media screen and (min-width: 576px) {
@@ -179,15 +173,9 @@ h2 {
   }
 }
 
-@media screen and (min-width: 768px) {
-}
+@media screen and (min-width: 768px) {}
 
-@media screen and (min-width: 865px) {
-  .main-input {
-    
-    bottom: 50px;
-}
-}
+@media screen and (min-width: 865px) {}
 
 @media screen and (min-width: 992px) {
   .main-content {
@@ -197,8 +185,7 @@ h2 {
 
 }
 
-@media screen and (min-width: 1200px) {
-}
+@media screen and (min-width: 1200px) {}
 
 .margin-top-15 {
   margin-top: 15px;
@@ -210,6 +197,10 @@ h2 {
 
 .padding-bottom-15 {
   padding-bottom: 15px;
+}
+
+.padding-bottom-30 {
+  padding-bottom: 30px;
 }
 
 .margin-top-30 {
