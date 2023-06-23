@@ -39,6 +39,33 @@
     background-color: #353740;
   }
   
+  .button-logout_visible {
+    display: flex;
+    position: fixed;
+    width: 18%;
+    height: 45px;
+    bottom: 100px;
+    left: 10px;
+    visibility: visible;
+    opacity: 1;
+    z-index: 100;
+  }
+  
+  .button-logout_hidden {
+    display: flex;
+    position: fixed;
+    width: 18%;
+    height: 45px;
+    bottom: 100px;
+    left: 10px;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 100;
+  }
+  .button-logout-color {
+    background-color: black;
+  }
+
   .area-account{
       position: fixed;
       width: 18%;
@@ -178,4 +205,10 @@
   
   .svg_white {
     color: white;
+  }
+
+  .svg_white_loggout {
+    color: white;
+    position: fixed;
+   
   }

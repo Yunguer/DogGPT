@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const botao = styled.button`
+    display: flex;
+    gap: 10px;
+    align-items: center;
     padding: 16px 20px;
     outline: none;
     border: none;
@@ -10,6 +13,6 @@ export const botao = styled.button`
     background-color: black;
     color: white;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 12px;
     max-width: 350px;
 `;
