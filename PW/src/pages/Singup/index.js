@@ -22,15 +22,17 @@ export default function Singup() {
             return;
         } 
 
-        const res = signup(email, senha, nome);
+        signup(email, senha, nome).then((res) =>{
+            if(res) {
+                setError(res);
+                return;
+            }
+    
+            alert("Usuário cadastrado com sucesso!");
+            navigate("/");
+        });
 
-        if(res) {
-            setError(res);
-            return;
-        }
-
-        alert("Usuário cadastrado com sucesso!");
-        navigate("/");
+        
     };
 
     return(

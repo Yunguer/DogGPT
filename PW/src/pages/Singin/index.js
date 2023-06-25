@@ -23,14 +23,15 @@ export default function Singin() {
             return;
         }
 
-        const res = signin(email, senha);
+        signin(email, senha).then((res) => {
+            if (res) {
+                setError(res);
+                return;
+            }
+    
+            navigate("/home");
+        });
 
-        if (res) {
-            setError(res);
-            return;
-        }
-
-        navigate("/home");
     }
 
     return(

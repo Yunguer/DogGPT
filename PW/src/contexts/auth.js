@@ -43,7 +43,7 @@ export const AuthProvider = ({ children }) => {
     const signin = (email, password) =>{ 
 
         console.log("Entrando na funcao signin");
-        acessarBanco().then((usuarios) => {
+        const retorno =  acessarBanco().then((usuarios) => {
             
             console.log(usuarios);
             const hasUser = usuarios?.filter((user) => user.email === email);
@@ -65,11 +65,11 @@ export const AuthProvider = ({ children }) => {
         
         }
         );
-        
+        return retorno;
     }
 
     const signup = (email, password, nome) =>{
-        acessarBanco().then( (usuarios) => {
+        const retorno = acessarBanco().then( (usuarios) => {
             console.log("entrou no signup")
             const hasUser = usuarios?.filter((user) => user.email === email);
 
@@ -89,7 +89,7 @@ export const AuthProvider = ({ children }) => {
 
         }
         )
-        
+        return retorno;
     }
 
     const signout = () => {
