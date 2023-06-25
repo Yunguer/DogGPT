@@ -5,9 +5,9 @@ import {Link, useNavigate} from 'react-router-dom';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 import useAuth from '../../hooks/useAuth';
+import GoogleLogin from "react-google-login";
 
-
-
+const clientId = "820964649937-8fjv5regbo6nvanc2hnd564t1vlubjf0.apps.googleusercontent.com"
 export default function Singin() {
     
     const { signin } = useAuth();
@@ -34,6 +34,14 @@ export default function Singin() {
 
     }
 
+    const onSuccessGoogle = (response) => {
+        console.log(response.profileObj);
+    }
+
+    const onFailureGoogle = (response) => {
+        console.log("LOGIN FAILED! res:"+ response);
+    }
+
     return(
         <C.Container>
             <C.Label>SISTEMA DE LOGIN</C.Label>
@@ -58,6 +66,12 @@ export default function Singin() {
                         <Link to="/singup">&nbsp;Registre-se</Link>
                     </C.Strong>
                 </C.Label>
+                <GoogleLogin
+                    clientId={clientId}
+                    buttonText="Continuar com o Google"
+                    onSuccess={onSuccessGoogle}
+                    onFailure={onFailureGoogle}
+                /> 
             </C.Content>
         </C.Container>    
     )
