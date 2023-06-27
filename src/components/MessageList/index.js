@@ -9,7 +9,6 @@ export default function MessageList({lista}) {
         <C.Content>
             <C.Box>
                 { lista.map((per) => {
-                    console.log("per ",per)
                     return(
                     <div>  
                         <C.Message>

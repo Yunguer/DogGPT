@@ -1,8 +1,7 @@
 import React from "react";
 import * as C from "./styles";
 
-
-export default function UserImage(props) {
+export default function UserImage({props}) {
 
     if(typeof props != "undefined") {
         return(
