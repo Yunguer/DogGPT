@@ -26,7 +26,8 @@ function Home({ user }) {
   const [buttonVisible, setButtonVisible] = useState("button-logout_hidden");
   const [idChat, setIdChat] = useState(-1);
   const [listaChats, setListaChats] = useState([]);
-  
+  const [listaHist, setListaHist] = useState([]);
+
   useEffect(() => {
       supabaseClient
         .from('chat')
@@ -34,19 +35,20 @@ function Home({ user }) {
         .eq('usuario',user.id)
         .then(({data}) => {
           const listaHist = [];
+          const listaChats = [];
           data.forEach((chat) => {
             const historico = {"id": chat.id,
                                 "pergunta": chat.questao[0].substring(0, 10)+" ..."}
-            listaHist.push(historico) 
+            listaHist.push(historico)
+            listaChats.push(chat); 
           })
-          setListaChats(listaHist);
+          setListaChats(listaChats);
+          setListaHist(listaHist);
         });
   }, [])
 
   // função para mandar a mensagem para o banco 
   async function handleNovaMensagem(novaMensagem) {
-
-    console.log(novaMensagem);
 
     novaMensagem = "{" + novaMensagem + "}";
     const mensagem = {
@@ -69,7 +71,7 @@ function Home({ user }) {
     setMensagem('');
   }
 
-  console.log(user.foto_url);
+
 
   return (
     <body>
@@ -80,7 +82,7 @@ function Home({ user }) {
             <button className="new-chat-button" onClick={() => {setIdChat(-1)}}>
               <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" className="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
               New Chat</button>
-              <Historico listaChats={listaChats}></Historico>
+              <Historico listaChats={listaHist} fun={setIdChat}></Historico>
             <div className={buttonVisible}>
               <ButtonLoggout Text="Loggout" onClick={() => [signout(), navigate("/")]}>Loggout</ButtonLoggout>
             </div>
@@ -106,7 +108,7 @@ function Home({ user }) {
 
         <div className="main-content">
 
-          <Content id={idChat} listaChat={[]}></Content>
+          <Content id={idChat} listaChats={listaChats}></Content>
 
 
           <div className='text-div'>
@@ -116,7 +118,6 @@ function Home({ user }) {
                   onChange={(event) => {
                     const valor = event.target.value;
                     setMensagem(valor);
-                    console.log(valor);
                   }}
                   onKeyUp={(event) => {
                     if (event.key === 'Enter' && event.shiftKey === false) {
@@ -143,37 +144,40 @@ function Home({ user }) {
   );
 }
 
-/* 
-function MontaLista({chat}) {
-  const questoes = data[0].questao;
-  const respostas = data[0].resposta;
+
+function MontaLista(id, chat) {
+  const questoes = chat[id].questao;
+  const respostas = chat[id].resposta;
   const merged = [];
+  
   for(var i = 0; i <questoes.length; i++) {
     merged.push({ pergunta:questoes[i], resposta:respostas[i]})
   }
-  setListaChat(merged);
+  return merged;
 }
-*/
 
-function Content({id, listaChats}) {
-  
-  if(id === -1 ) {
+
+function Content({id,  listaChats} ) {
+  console.log("id", id)
+  if(id === -1 | listaChats.length === 0) {
     return (
       <Examples></Examples>
     )
   }else{
+    
+    const lista = MontaLista(id, listaChats);
     return(
-      <MessageList lista={[]}></MessageList>
+      <MessageList lista={lista}></MessageList>
     )
   }
   
 }
 
-function Historico({listaChats}) {
+function Historico({listaChats, fun}) {
   
   if(listaChats.length >0) {
     return(
-      <HistoricList historico={listaChats}></HistoricList>
+      <HistoricList historico={listaChats} fun={fun}></HistoricList>
     )
   }
 }
