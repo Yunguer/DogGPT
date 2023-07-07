@@ -17,6 +17,9 @@ const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBh
 const SUPABASE_URL = 'https://pxajozvfarqpeknxpqmt.supabase.co';
 const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
+
+const latidos= ["Au Au? Au, auau!","Auauaua auaau.", "Au! Auau, au?", "Auaua auau, auauau, auau. 🐩", "WOOF 🐺", "🐶", "Woof Woof? Wooooooof!", "Au Au 🐕"];
+
 function Home({ user }) {
   //Função para deslogar
   const { signout } = useAuth();
@@ -27,9 +30,10 @@ function Home({ user }) {
   const [idChat, setIdChat] = useState(-1);
   const [listaChats, setListaChats] = useState([]);
   const [listaHist, setListaHist] = useState([]);
+  
 
-  useEffect(() => {
-      supabaseClient
+  function getChats(isNewChat = false) {
+    supabaseClient
         .from('chat')
         .select("*")
         .eq('usuario',user.id)
@@ -44,30 +48,62 @@ function Home({ user }) {
           })
           setListaChats(listaChats);
           setListaHist(listaHist);
+
+          if(isNewChat) {
+            setIdChat(listaHist.length-1);
+          }
         });
-  }, [])
+  }
+  useEffect(getChats, [])
 
   // função para mandar a mensagem para o banco 
   async function handleNovaMensagem(novaMensagem) {
+    
+    if(idChat === -1) {
+  
+      novaMensagem = "{" + novaMensagem + "}";
+      const rand = (Math.trunc(Math.random()*1000)) % latidos.length;
+      const lat = latidos[rand];
+      const novaResposta = "{" + lat+ "}";
+      
+      const mensagem = {
+        //id: 1,
+        questao: novaMensagem,
+        resposta: novaResposta,
+        usuario: user.id
+      };
 
-    novaMensagem = "{" + novaMensagem + "}";
-    const mensagem = {
-      //id: 1,
-      questao: novaMensagem,
-      resposta: "{ }",
-      usuario: user.id
-    };
+      const { error } = await supabaseClient
+        .from('chat')
+        .insert(mensagem)
 
-    const { error } = await supabaseClient
-      .from('chat')
-      .insert(mensagem)
+      if (error == null) {
+        console.log("Enviado");
+      } else {
+        console.log(error);
+      }
 
-    if (error == null) {
-      console.log("Enviado");
-    } else {
-      console.log(error);
+      getChats(true);
+      
+    }else{
+      const rand = (Math.trunc(Math.random()*1000)) % latidos.length;
+      const lat = latidos[rand];
+      
+      listaChats[idChat].questao.push(novaMensagem);
+      listaChats[idChat].resposta.push(lat);
+      
+      const { error } = await supabaseClient
+        .from('chat')
+        .update({ questao: listaChats[idChat].questao, resposta: listaChats[idChat].resposta})
+        .eq('id', listaChats[idChat].id)
+
+        if(error!=null) {
+          console.log(error);
+        }
+        
+
     }
-
+  
     setMensagem('');
   }
 

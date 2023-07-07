@@ -12,10 +12,10 @@ export default function MessageList({lista}) {
                     return(
                     <div>  
                         <C.Message>
-                            <p> Você: {per.pergunta} </p>
+                            <p> {per.pergunta} </p>
                         </C.Message>
                         <C.MessageAnswer>
-                            <p> Resposta: {per.resposta}</p>
+                            <p> {per.resposta}</p>
                         </C.MessageAnswer>
                     </div>
                     )}

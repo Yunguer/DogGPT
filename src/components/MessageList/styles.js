@@ -27,8 +27,8 @@ export const Message = styled.li`
     display: flex;
     text-align: left;
     list-style-type: none;
-    color: white;   
-    background-color: gray;
+    color: black;   
+    background-color: white;
     border-radius: 5px;
     padding: 6px;
     margin-bottom: 12px;
@@ -37,8 +37,8 @@ export const MessageAnswer = styled.li`
     display: flex;
     justify-content: flex-end;
     list-style-type: none;
-    color: white;   
-    background-color: gray;
+    color: black;   
+    background-color:  rgb(247,247,248);
     border-radius: 5px;
     padding: 6px;
     padding-rigth:6px;
