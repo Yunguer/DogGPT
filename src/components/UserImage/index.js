@@ -1,10 +1,11 @@
 import React from "react";
 import * as C from "./styles";
 
-export default function UserImage({image}) {
-    if(typeof image != "undefined") {
+export default function UserImage(image) {
+
+    if(typeof image.src != "undefined") {
         return(
-            <C.UserImage src={image}></C.UserImage>
+            <C.UserImage src={image.src}></C.UserImage>
             )
     }else{
         return(
@@ -14,7 +15,7 @@ export default function UserImage({image}) {
 }
 
 export function UserChat({image}) {
-    console.log("Foto url", image);
+   
     if(typeof image != "undefined") {
         return(
             <C.UserImage src={image}></C.UserImage>
