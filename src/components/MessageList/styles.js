@@ -8,7 +8,7 @@ export const Content = styled.div`
  
     flex-direction: column;
     border-radius: 5px;
-    padding: 12px;
+    padding: 0;
 `
 
 export const Box = styled.ul`
@@ -18,8 +18,7 @@ export const Box = styled.ul`
     display: flex;
     flex-direction: column;
     flex: 1;
-    padding-right:12px;
-    padding-left:10px;
+    padding: 0;
     margin-bottom: 16px;
     height: 100px;
 `
@@ -29,18 +28,27 @@ export const Message = styled.li`
     list-style-type: none;
     color: black;   
     background-color: white;
-    border-radius: 5px;
-    padding: 6px;
+    padding: 20px;
     margin-bottom: 12px;
 ` 
 export const MessageAnswer = styled.li`
     display: flex;
-    justify-content: flex-end;
+    flex-direction: row;
+    align-items: start;
     list-style-type: none;
     color: black;   
     background-color:  rgb(247,247,248);
-    border-radius: 5px;
-    padding: 6px;
-    padding-rigth:6px;
+    padding: 20px;
+    border-top: 1px solid rgba(0,0,0,.1);
+    border-bottom: 1px solid rgba(0,0,0,.1);
     margin-bottom: 12px;
-` 
+`
+
+export const Text = styled.p`
+    padding-left: 40px;
+`
+
+export const DogIcon = styled.img`
+    width: 50px;
+    height: 50px;
+`

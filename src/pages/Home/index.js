@@ -110,13 +110,13 @@ function Home({ user }) {
 
 
   return (
-    <body>
+    <div>
       <div className="main-page">
 
         <div className="nav">
           <nav style={{"height":"80%"}}>
             <button className="new-chat-button" onClick={() => {setIdChat(-1)}}>
-              <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" className="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
               New Chat</button>
               <Historico listaChats={listaHist} fun={setIdChat}></Historico>
             <div className={buttonVisible}>
@@ -135,7 +135,7 @@ function Home({ user }) {
                   <UserImage src={user.foto_url} />
                   
                   <div className='account-username'>{user.nome}</div>
-                  <svg stroke="white" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" className="h-4 w-4 flex-shrink-0 text-gray-500" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
+                  <svg stroke="white" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" height="2em" width="2em" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
                 </div>
               </button>
             </div>
@@ -144,7 +144,7 @@ function Home({ user }) {
 
         <div className="main-content">
 
-          <Content id={idChat} listaChats={listaChats}></Content>
+          <Content id={idChat} listaChats={listaChats} image={user.foto_url} fun={setMensagem}></Content>
 
 
           <div className='text-div'>
@@ -162,21 +162,20 @@ function Home({ user }) {
                     }
                   }}
                   className='text-area'
-                  placeholder="Ask a Question" name='Mensagem' id="user-messagr"></textarea>
+                  placeholder="Send a Message" name='Mensagem' id="user-messagr"></textarea>
               </form>
-              <div className="send-button">
-                <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" className="h-4 w-4 mr-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-              </div>
+              <button className="send-button" onClick={() => {handleNovaMensagem(mensagem)}}>
+                <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 mr-1" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </button>
             </div>
             <span className='span_bottom'>
-              Free Research Preview. ChatGPT may produce inaccurate
-              information about people, places, or facts. ChatGPT Mar 23
-              Version
+              Este site é uma paródia do ChatGPT, criado para a disciplina
+              Programação para Internet, do curso de Ciência da Computação da UFF.
             </span>
           </div>
         </div>
       </div>
-    </body>
+    </div>
   );
 }
 
@@ -193,17 +192,16 @@ function MontaLista(id, chat) {
 }
 
 
-function Content({id,  listaChats} ) {
-  console.log("id", id)
+function Content({id,  listaChats, image, fun} ) {
   if(id === -1 | listaChats.length === 0) {
     return (
-      <Examples></Examples>
+      <Examples fun={fun}></Examples>
     )
   }else{
     
     const lista = MontaLista(id, listaChats);
     return(
-      <MessageList lista={lista}></MessageList>
+      <MessageList lista={lista} image={image}></MessageList>
     )
   }
   

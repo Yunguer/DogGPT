@@ -1,10 +1,11 @@
 import React from "react";
+
 import * as C from "./styles.js";
+import dogImage from "./dog-icon.png"
+import { UserChat } from "../UserImage/index.js";
 
-
-
-export default function MessageList({lista}) {
-    console.log("lista ", lista)
+export default function MessageList({lista, image}) {
+    console.log("image user ",image)
     return(
         <C.Content>
             <C.Box>
@@ -12,10 +13,12 @@ export default function MessageList({lista}) {
                     return(
                     <div>  
                         <C.Message>
-                            <p> {per.pergunta} </p>
+                            {UserChat({image})}
+                            <C.Text> {per.pergunta} </C.Text>
                         </C.Message>
                         <C.MessageAnswer>
-                            <p> {per.resposta}</p>
+                            <C.DogIcon src={dogImage}/>
+                            <C.Text> {per.resposta}</C.Text>
                         </C.MessageAnswer>
                     </div>
                     )}
@@ -26,3 +29,6 @@ export default function MessageList({lista}) {
         );
     
 }
+
+
+

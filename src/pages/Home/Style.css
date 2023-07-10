@@ -139,17 +139,17 @@
     background-color: white;
     padding-top: 0px;
     position: fixed;
-    bottom: 0;
-    padding-bottom: 15px;
-    padding-left: 15%;
+    bottom: 10px;
+    padding: 0;
+    left: 35%;
   }
   
   .text-box {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     height: 44px;
-    padding-left: 10px;
-    padding-top: 12px;
+    padding: 0;
     border-style: solid; 
     border-width: 1px;
     border-color: rgba(0, 0, 0, 0.1);
@@ -158,24 +158,30 @@
   }
   
   .text-area {
+    line-height: 5px;
+    padding-top: 5px;
+    display: flex;
+    align-items: center;
     border: none;
     resize: none;
     width: 500px;
     outline: none;
   }
   
+  .send-button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+  }
+
   .span_bottom {
     font-size: 12px;
   }
   
-  .no-style-list{
-    list-style: none;
-  }
-  
-  svg {
-    width: 25px;
-    height: 25px;
-  }
   
   .svg_white {
     color: white;
