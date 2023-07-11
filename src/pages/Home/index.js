@@ -1,6 +1,5 @@
 
 import './Style.css';
-import localStorage from 'local-storage';
 
 import { useState, useEffect } from "react";
 import { createClient } from "@supabase/supabase-js";
@@ -149,7 +148,7 @@ function Home({ user }) {
 
           <div className='text-div'>
             <div className='text-box'>
-              <form>
+              <form className='forms'>
                 <textarea value={mensagem}
                   onChange={(event) => {
                     const valor = event.target.value;

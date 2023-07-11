@@ -51,4 +51,6 @@ export const Text = styled.p`
 export const DogIcon = styled.img`
     width: 50px;
     height: 50px;
+    max-width: 50px;
+    max-height: 50px;
 `
