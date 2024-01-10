@@ -2,7 +2,7 @@
 
 Esté projeto é feito em React e é uma paródia do ChatGPT
 
-## Execução do Projeto
+# Execução do Projeto
 
 Para executar o projeto faça download deste repositorio, e no terminal execute 
 
@@ -12,7 +12,7 @@ Para instala os modulos
 ### `npm start`
 Para executar o projeto
 
-### O Projeto
+# O Projeto
 
 O projeto é feito com React junto com o banco de dados SupraBase, ele tem três páginas, uma página de login com autenticação com o google, uma página de registro por email, e por ultimo a página para o usuário conversar com o DogGPT, ele tem respostas predefinidas que são geradas aleatoriamente que imitam um cachorro conversando, além disso há um histórico de conversas para cada usario que são salvas no banco de dados, então o usário sempre tera acesso as conversas mesmo se deslogar e depois logar novamente.
 
