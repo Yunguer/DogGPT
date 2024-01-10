@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+# DogGPT
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Esté projeto é feito em React e é uma paródia do ChatGPT
 
-## Available Scripts
+## Execução do Projeto
 
-In the project directory, you can run:
+Para executar o projeto faça download deste repositorio, e no terminal execute 
+
+### `npm install`
+Para instala os modulos
 
 ### `npm start`
+Para executar o projeto
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### O Projeto
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+O projeto é feito com React junto com o banco de dados SupraBase, ele tem três páginas, uma página de login com autenticação com o google, uma página de registro por email, e por ultimo a página para o usuário conversar com o DogGPT, ele tem respostas predefinidas que são geradas aleatoriamente que imitam um cachorro conversando, além disso há um histórico de conversas para cada usario que são salvas no banco de dados, então o usário sempre tera acesso as conversas mesmo se deslogar e depois logar novamente.
 
-### `npm test`
+<p align="center">
+ <img src="https://github.com/Yunguer/Prog-Web/assets/74862406/d3f2a655-13ae-47bd-a39a-90cbf8230572" width=75% height=75% align=center>
+ </br></br>
+</p>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<p align="center">
+ <img src="https://github.com/Yunguer/Prog-Web/assets/74862406/a811f96a-55ca-4eef-9fac-34a185a57cef" width=75% height=75% align=center>
+ </br></br>
+</p>
 
-### `npm run build`
+<p align="center">
+ <img src="https://github.com/Yunguer/Prog-Web/assets/74862406/0185b271-a304-4b30-819d-3a5176614fce" width=75% height=75% align=center>
+ </br></br>
+</p>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<p align="center">
+ <img src="https://github.com/Yunguer/Prog-Web/assets/74862406/172190de-796d-444f-bf33-855091bc020d" width=75% height=75% align=center>
+ </br></br>
+</p>
