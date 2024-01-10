@@ -16,6 +16,8 @@ Para executar o projeto
 
 O projeto é feito com React junto com o banco de dados SupraBase, ele tem três páginas, uma página de login com autenticação com o google, uma página de registro por email, e por ultimo a página para o usuário conversar com o DogGPT, ele tem respostas predefinidas que são geradas aleatoriamente que imitam um cachorro conversando, além disso há um histórico de conversas para cada usario que são salvas no banco de dados, então o usário sempre tera acesso as conversas mesmo se deslogar e depois logar novamente.
 
+</br></br>
+
 <p align="center">
  <img src="https://github.com/Yunguer/Prog-Web/assets/74862406/d3f2a655-13ae-47bd-a39a-90cbf8230572" width=75% height=75% align=center>
  </br></br>
