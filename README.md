@@ -19,7 +19,7 @@ O projeto é feito com React junto com o banco de dados SupraBase, ele tem três
 </br></br>
 
 <p align="center">
- <img src="https://github.com/Yunguer/Prog-Web/assets/74862406/d3f2a655-13ae-47bd-a39a-90cbf8230572" width=75% height=75% align=center>
+ <img src="https://github.com/Yunguer/DogGPT/assets/74862406/1f0e2c59-226f-4692-90bb-359047101421" width=75% height=75% align=center>
  </br></br>
 </p>
 
